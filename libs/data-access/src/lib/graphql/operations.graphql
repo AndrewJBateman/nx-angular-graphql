@@ -1,0 +1,18 @@
+query TaskList {
+  allTasks{
+    id
+    name
+    deadline
+    hours
+  }
+}
+
+
+mutation addTask($name: String!, $deadline: String!, $hours: Int!) {
+  addTask(name: $name, deadline: $deadline, hours: $hours) {
+    id
+    name
+    deadline
+    hours
+  }
+}
