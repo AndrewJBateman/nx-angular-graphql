@@ -34,6 +34,9 @@
     },
     "data-access": {
       "tags": []
+    },
+    "feature-tasks": {
+      "tags": []
     }
   }
 }

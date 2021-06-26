@@ -239,6 +239,31 @@
           }
         }
       }
+    },
+    "feature-tasks": {
+      "projectType": "library",
+      "root": "libs/feature-tasks",
+      "sourceRoot": "libs/feature-tasks/src",
+      "prefix": "nx-angular-graphql",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature-tasks"],
+          "options": {
+            "jestConfig": "libs/feature-tasks/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature-tasks/src/**/*.ts",
+              "libs/feature-tasks/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }
