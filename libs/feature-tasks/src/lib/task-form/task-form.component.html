@@ -1,0 +1,12 @@
+<form [formGroup]="newTaskForm" (submit)="createTask()">
+  <label for="name">Name</label><br />
+  <input formControlName="name" /><br />
+
+  <label for="deadline">Deadline</label><br />
+  <input formControlName="deadline" /><br />
+
+  <label for="hours">Hours to Complete</label><br />
+  <input formControlName="hours" /><br />
+
+  <button>Create new task</button>
+</form>
