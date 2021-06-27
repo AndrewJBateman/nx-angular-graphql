@@ -1,12 +1,18 @@
-<form [formGroup]="newTaskForm" (submit)="createTask()">
-  <label for="name">Name</label><br />
-  <input formControlName="name" /><br />
+<div class="form-container">
+  <form
+    [formGroup]="newTaskForm"
+    (submit)="createTask()"
+    class="form-container"
+  >
+    <label for="name">Name</label><br />
+    <input formControlName="name" /><br />
 
-  <label for="deadline">Deadline</label><br />
-  <input formControlName="deadline" /><br />
+    <label for="deadline">Deadline</label><br />
+    <input formControlName="deadline" /><br />
 
-  <label for="hours">Hours to Complete</label><br />
-  <input formControlName="hours" /><br />
+    <label for="hours">Tasktime</label><br />
+    <input formControlName="hours" /><br />
 
-  <button>Create new task</button>
-</form>
+    <button>Create new task</button>
+  </form>
+</div>
