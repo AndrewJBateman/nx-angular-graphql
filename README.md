@@ -29,7 +29,7 @@
 
 ## :camera: Screenshots
 
-![Frontend screenshot](./img/home.png)
+![Frontend screenshot](./imgs/home.png)
 
 ## :signal_strength: Technologies
 
@@ -50,7 +50,7 @@
   `http://localhost:3333/graphql`
 * Run `npm start nx-angular-graphql` for a frontend
 * Run `npm run lint` to lint test entire client-side codebase using ESLint. All files pass.
-* Run `nx build angular-ngrx-energy` to generate a build file
+* Run `nx build `nx-angular-graphql` to generate a build file
 
 ## :wrench: Testing
 
@@ -86,7 +86,7 @@ type Mutation {
 
 * Status: Working
 * Testing: unit and end-end tests not completed
-* To-Do: change deadline from simple string to a Date,
+* To-Do: change deadline from simple string to a Date, change random image for icon? add detail to task?
 
 ## :clap: Inspiration/General Tools
 
