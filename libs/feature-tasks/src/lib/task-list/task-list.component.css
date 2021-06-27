@@ -12,7 +12,7 @@ li {
 }
 
 li:nth-child(2n) {
-  background-color: #eee;
+  background-color: rgb(221, 225, 238);
 }
 
 span.deadline {

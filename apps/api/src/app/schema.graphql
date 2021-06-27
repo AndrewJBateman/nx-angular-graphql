@@ -1,14 +1,14 @@
 type Task {
-    id: Int!
-    name: String
-    deadline: String
-    hours: Int
+  id: Int!
+  name: String
+  deadline: String
+  hours: Int
 }
 
 type Query {
-    allTasks: [Task]
+  allTasks: [Task]
 }
 
 type Mutation {
-    addTask(name: String, deadline: String, hours: Int): Task
+  addTask(name: String, deadline: String, hours: Int): Task
 }
