@@ -1,105 +1,101 @@
+# :zap: Nx Angular GraphQL
 
+* Nx monorepo with Angular app to display/add tasks from a NestJS backend API using Apollo GraphQL
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-# NxAngularGraphql
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/nx-angular-graphql?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/nx-angular-graphql?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/nx-angular-graphql?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/nx-angular-graphql?style=plastic)
 
-This project was generated using [Nx](https://nx.dev).
+## :page_facing_up: Table of contents
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-🔎 **Powerful, Extensible Dev Tools**
+## :books: General info
 
-## Quick Start & Documentation
+* Nx workspace for both front and backends
+* GraphQL typed schema used with code-generator to autogenerate frontend code
+* Apollo Client stores the results of its GraphQL queries in a normalized, in-memory cache using the 'InMemoryCache' class
+* Data-access library used to handle communication with the backend.
+* Feature Tasks library with container components for displaying task data.
 
-[Nx Documentation](https://nx.dev/angular)
+## :camera: Screenshots
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
+![Frontend screenshot](./img/home.png)
 
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
+## :signal_strength: Technologies
 
-## Adding capabilities to your workspace
+* [Nx v12](https://nx.dev) build framework used to create project workspace
+* [Angular framework v12](https://angular.io/) for frontend tasks view
+* [NestJS v7](https://nestjs.com/) for backend API
+* [GraphQL v15](https://graphql.org/) API query language with [graphql-tools](https://github.com/ardatan/graphql-tools#readme)
+* [npm Apollo Angular v2](https://www.npmjs.com/package/apollo-angular) to fetch task data from the GraphQL server and display it in the Angular UI
+* [npm apollo-server-express v2](https://www.npmjs.com/package/apollo-server-express) Express and Connect integration of GraphQL Server
+* [GraphQL Code Generator v1](https://www.graphql-code-generator.com/) CLI tool & modules used to generate Typescript typings. `libs/data-access/codegen.yml` file configures the code generator
+* [Random image source](https://picsum.photos/) - free placeholder images
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+## :floppy_disk: Setup
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+* Install dependencies using `npm i`
+* Run `nx dep-graph` to see a diagram of the dependencies of the project.
+* Run `npm start api` for a backend dev server. View GraphQL playground at
+  `http://localhost:3333/graphql`
+* Run `npm start nx-angular-graphql` for a frontend
+* Run `npm run lint` to lint test entire client-side codebase using ESLint. All files pass.
+* Run `nx build angular-ngrx-energy` to generate a build file
 
-Below are our core plugins:
+## :wrench: Testing
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+* tba
 
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
+## :computer: Code Examples
 
-## Generate an application
+* `schema.graphql` allTasks query and addTask mutation
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+```typescript
+type Task {
+  id: Int!
+  name: String
+  deadline: String
+  hours: Int
+}
 
-> You can use any of the plugins above to generate applications as well.
+type Query {
+  allTasks: [Task]
+}
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+type Mutation {
+  addTask(name: String, deadline: String, hours: Int): Task
+}
+```
 
-## Generate a library
+## :cool: Features
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+* monorepo organised libraries etc. makes for tidier code
+* GraphQL interface
 
-> You can also use any of the plugins above to generate libraries as well.
+## :clipboard: Status, Testing & To-Do List
 
-Libraries are shareable across libraries and applications. They can be imported from `@nx-angular-graphql/mylib`.
+* Status: Working
+* Testing: unit and end-end tests not completed
+* To-Do: change deadline from simple string to a Date,
 
-## Development server
+## :clap: Inspiration/General Tools
 
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+* [Nx documentation](https://nx.dev/angular)
 
-## Code scaffolding
+## :file_folder: License
 
-Run `ng g component my-component --project=my-app` to generate a new component.
+* This project is licensed under the terms of the MIT license.
 
-## Build
+## :envelope: Contact
 
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-
-
-
-
-
-## ☁ Nx Cloud
-
-### Computation Memoization in the Cloud
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
